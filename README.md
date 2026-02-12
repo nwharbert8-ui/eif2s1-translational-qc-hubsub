@@ -1,6 +1,5 @@
 # EIF2S1 Translational Quality Control Hub in Human Brain
 
-[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.18616668-blue)](https://doi.org/10.5281/zenodo.18616668)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GTEx v8](https://img.shields.io/badge/Data-GTEx%20v8-orange)](https://gtexportal.org/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -92,6 +91,8 @@ The pipeline is organized as 18 sequential cells designed for Google Colab execu
 
 **Co-expression analysis:** Genome-wide Pearson correlations on log₂(TPM + 1)-transformed data. Top 5% threshold defines co-expression networks per target gene.
 
+Reproducibility note: gProfiler updates its underlying Gene Ontology, KEGG, and Reactome databases periodically (typically quarterly). Enrichment p-values and term counts may differ slightly when re-running the pipeline against a newer database version. The pre-computed results in MS2_Results/ reflect the gProfiler database active at the time of manuscript submission. Users can verify the database version through the gProfiler API response metadata. Core enrichment patterns (e.g., RQC and proteostasis enrichment for EIF2S1, absence of translation initiation enrichment) are robust to database updates, as they reflect large fold-enrichments driven by gene membership rather than annotation boundary changes.
+
 **Seven-gene comparison panel:**
 
 | Gene | Role | Network Context |
@@ -147,9 +148,10 @@ The pipeline automatically downloads all required GTEx v8 files on first run:
 ## Quick Start
 
 1. Open [Google Colab](https://colab.research.google.com/)
-2. Upload `MS2_EIF2S1_Definitive_Pipeline.py` or paste cells sequentially
-3. Run all cells in order (~20–30 min total)
-4. Results appear in `MS2_Results/` and `MS2_Figures/`
+2. Run !pip install gprofiler-official matplotlib-venn -q in your first Colab cell before executing the pipeline. The script includes this as a commented line (Cell 1) but it must be uncommented or run manually.
+3. Upload `MS2_EIF2S1_Definitive_Pipeline.py` or paste cells sequentially
+4. Run all cells in order (~20–30 min total)
+5. Results appear in `MS2_Results/` and `MS2_Figures/`
 
 The pipeline's final cell (Cell 18) prints a complete verification of every number reported in the manuscript.
 
