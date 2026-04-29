@@ -1,0 +1,16 @@
+{
+  "methodology": "WJ-native (Pearson on log2(DESeq2-norm + 1); top-5% Jaccard pairwise)",
+  "fundamental_unit": "individual gene",
+  "pairwise_matrix": "full, no pre-filtering",
+  "correlation_method": "Pearson",
+  "fdr_scope": "n/a \u2014 descriptive replication",
+  "domain_conventional_methods": "comparison only",
+  "random_seed": 42,
+  "pipeline_file": "pipeline_2_disease_replication.py",
+  "execution_date": "2026-04-29",
+  "wj_compliance_status": "PASS",
+  "data_source": "GEO GSE68719 \u2014 Parkinson Disease BA9 prefrontal cortex RNA-seq",
+  "n_pd_samples": 29,
+  "n_control_samples": 44,
+  "purpose": "Reviewer 4: replicate EIF2S1\u2013PELO closed-loop in disease cohort (BA9, neurodegeneration)"
+}

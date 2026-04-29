@@ -1,0 +1,2 @@
+pair,observed_gap,bootstrap_mean,bootstrap_std,ci_lower_95,ci_upper_95,n_bootstrap_iterations
+EIF2S1-PELO,0.42446800814525004,0.4878644428342344,0.08479380948680411,0.32523293044179563,0.6485233471468185,500

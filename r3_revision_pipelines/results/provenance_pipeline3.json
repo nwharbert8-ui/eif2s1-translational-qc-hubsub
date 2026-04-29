@@ -1,0 +1,16 @@
+{
+  "methodology": "DepMap Chronos co-dependency (Pearson on CRISPR effect across cell lines)",
+  "fundamental_unit": "individual gene CRISPR knockout effect",
+  "pairwise_matrix": "full, no pre-filtering",
+  "correlation_method": "Pearson",
+  "fdr_scope": "n/a \u2014 descriptive validation",
+  "domain_conventional_methods": "DepMap-standard Chronos effect; not WJ-native but cross-layer validation",
+  "random_seed": 42,
+  "pipeline_file": "pipeline_3_depmap.py",
+  "execution_date": "2026-04-29",
+  "wj_compliance_status": "validation-only (not primary WJ analysis)",
+  "data_source": "DepMap Public 24Q2 CRISPRGeneEffect (Chronos)",
+  "n_cell_lines": 1150,
+  "n_genes": 17787,
+  "purpose": "Reviewer 2 #6: cross-validate GTEx co-expression with DepMap co-dependency"
+}

@@ -1,0 +1,5 @@
+measurement_layer,metric,eif2s1_pelo_value,interpretation
+Co-expression coupling architecture (this manuscript),Spearman rho between coupling profiles,0.987294591991915,Near-identical genome-wide coupling architecture
+Top-partner overlap (this manuscript),Binary Jaccard at top 5% threshold,0.5248826291079812,Modest overlap at strongest correlation partners
+Functional co-dependency (DepMap CRISPR),Co-dependency Jaccard at top 5%,0.006218,Essentially zero functional cellular co-dependency
+Functional co-dependency (DepMap CRISPR),Pearson r of gene-effect profiles,-0.071373215950884,No correlation in CRISPR phenotypic effects across cell lines

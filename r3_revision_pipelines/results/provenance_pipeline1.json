@@ -1,0 +1,24 @@
+{
+  "methodology": "WJ-native (continuous co-expression, top-5% Jaccard pairwise)",
+  "fundamental_unit": "individual gene",
+  "pairwise_matrix": "full, no pre-filtering",
+  "correlation_method": "Pearson on log2(TPM+1)",
+  "fdr_scope": "n/a \u2014 descriptive extension; main FDR is in original manuscript",
+  "domain_conventional_methods": "comparison only",
+  "random_seed": 42,
+  "pipeline_file": "pipeline_1_tcf25_asc1.py",
+  "execution_date": "2026-04-29",
+  "wj_compliance_status": "PASS",
+  "data_source": "GTEx v8 Brain\u2013Frontal Cortex (BA9)",
+  "n_samples": 209,
+  "n_genes": 16225,
+  "target_panel_size": 12,
+  "new_genes_added": [
+    "TCF25",
+    "ASCC1",
+    "ASCC2",
+    "ASCC3",
+    "TRIP4"
+  ],
+  "purpose": "Reviewer 2 concern #1: investigate TCF25 and ASC-1 complex"
+}

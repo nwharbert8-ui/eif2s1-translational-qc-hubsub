@@ -1,211 +1,166 @@
-# EIF2S1 Translational Quality Control Hub in Human Brain
+# EIF2S1-PELO Co-Expression Architecture in Human Brain
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![GTEx v8](https://img.shields.io/badge/Data-GTEx%20v8-orange)](https://gtexportal.org/)
+[![GSE68719](https://img.shields.io/badge/Data-GSE68719-purple)](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE68719)
+[![DepMap](https://img.shields.io/badge/Data-DepMap%2024Q2-darkred)](https://depmap.org/)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
-[![Google Colab](https://img.shields.io/badge/Run%20in-Google%20Colab-F9AB00?logo=googlecolab)](https://colab.research.google.com/)
 
-**Manuscript:** *EIF2S1 Co-expression Network Reveals a Closed-Loop Translational Quality Control Hub Linking Initiation Surveillance to Ribosome Rescue Machinery in Human Brain*
+**Manuscript (R3 revision):** *EIF2S1-PELO Co-Expression Architecture in Human Brain: Pairing-Family Decomposition Reveals Constitutive Transcriptional Coupling, Disease-Selective Top-Partner Disruption, and Functional Layer Separation*
 
-**Author:** Drake H. Harbert · [ORCID 0009-0007-7740-3616](https://orcid.org/0009-0007-7740-3616)  
-**Affiliation:** Inner Architecture LLC, Canton, OH 44721, USA  
+**Author:** Drake H. Harbert · [ORCID 0009-0007-7740-3616](https://orcid.org/0009-0007-7740-3616)
+**Affiliation:** Inner Architecture LLC, Canton, OH 44721, USA
 **Contact:** drake@innerarchitecturellc.com
+
+---
+
+## Status
+
+**Active revision under peer review.** The R3 revision substantially reframes the original findings using the Layer 2H pairing-family decomposition framework (Harbert, in press, Frontiers in Pharmacology). The reframing addresses substantive reviewer concerns by adding five new analytical pipelines, formal statistical anchoring (permutation null + bootstrap CI), and disease-cohort analysis.
 
 ---
 
 ## Summary
 
-This repository contains the complete, self-contained analytical pipeline for a genome-wide co-expression study demonstrating that **EIF2S1** (eIF2α) functions as a constitutive translational quality control hub in the human brain — transcriptionally coupled to ribosome rescue machinery (PELO) and proteostasis, while remaining independent of its own canonical translation initiation complex.
+This repository contains the complete analytical pipeline for a co-expression study of EIF2S1 (eIF2α, translation initiation surveillance) and PELO (Pelota, ribosome rescue) in human brain. The R3 revision applies pairing-family architectural decomposition to characterize the transcriptional coupling between these two translational quality control modules at multiple analytical layers, distinct from established direct biochemical mechanism (ZAK/GCN-mediated eIF2α phosphorylation; Wu et al. 2020).
 
-The central finding is an unexpected near-complete convergence between the EIF2S1 and PELO co-expression networks (**Jaccard = 0.526; Spearman ρ = 0.987; 559 shared genes**), identifying a closed-loop transcriptional axis that links translation initiation surveillance to ribosome rescue — two biochemically distinct stages with no known direct protein–protein interaction. This convergence exceeds even the LTN1–NEMF pair (J = 0.445), whose protein products physically co-occupy the 60S ribosomal subunit during quality control.
+## Key Findings (R3 revision)
 
-## Key Findings
-
-| Result | Value |
-|---|---|
-| EIF2S1–PELO Jaccard overlap | 0.526 (559 shared genes) |
-| Genome-wide rank correlation (ρ) | 0.987 |
-| RQC enrichment | 8.0-fold, *p* = 1.0 × 10⁻³ |
-| Proteostasis enrichment | 9.2-fold, *p* = 6.3 × 10⁻⁹ |
-| Translation initiation enrichment | 2.7-fold, *p* = 0.17 (not significant) |
-| Cross-stage coordination (I×R vs. random) | Cohen's *d* = 1.36, *p* = 2.37 × 10⁻²⁹ |
-| Direct EIF2S1–PELO Pearson *r* | 0.930 |
-| Agonal stress robustness (all models) | J = 0.502–0.530; rank preservation ρ > 0.998 |
-| Cross-region replication | ρ = 0.81–0.94 across 5 brain regions |
+| Finding | Value | Significance |
+|---------|-------|--------------|
+| EIF2S1-PELO continuous WJ (shifted) | 0.914 | Near-identical genome-wide coupling |
+| Binary Jaccard at top 5% | 0.490 | Substantial top-partner overlap |
+| Type 1 dissociation gap | 0.424 | Lowest in 21-pair QC panel |
+| Permutation null p-value | 0.015 | Significantly smaller than 200 random pairs (z=-2.57) |
+| Bootstrap 95% CI on gap | [0.325, 0.649] | Excludes random-null mean |
+| Type 2 max sign-treatment gap | 0.138 | Moderate sign-driven structure |
+| Type 6 Pearson-Spearman gap | 0.004 | Approximately linear-monotonic |
+| DepMap functional co-dependency | 0.006 (Jaccard); -0.07 (Pearson) | Layer separation: zero functional coupling |
+| PD vs control gap shift | 0.424 → 0.536 | Top-partner layer selectively disrupted |
+| Cross-region preservation | EIF2S1 0.899 / PELO 0.894 | Constitutive across 5 brain regions |
 
 ## Repository Structure
 
 ```
 eif2s1-translational-qc-hub/
 │
-├── README.md                          # This file
-├── LICENSE                            # MIT License
-├── MS2_EIF2S1_Definitive_Pipeline.py  # Complete analytical pipeline (18 cells)
+├── README.md                              # This file
+├── LICENSE                                # MIT License
+├── requirements.txt                       # Python dependencies
 │
-├── MS2_Results/                       # All output CSVs (generated by pipeline)
-│   ├── all_21_pairwise_comparisons.csv
-│   ├── EIF2S1_custom_enrichment.csv
-│   ├── gProfiler_EIF2S1_full.csv
-│   ├── gProfiler_PELO_full.csv
-│   ├── gProfiler_shared_EIF2S1_PELO.csv
-│   ├── gProfiler_EIF2S1_unique.csv
-│   ├── gProfiler_PELO_unique.csv
-│   ├── cross_stage_coordination.csv
-│   ├── agonal_sensitivity.csv
-│   └── cross_region_replication.csv
+├── MS2_EIF2S1_Definitive_Pipeline.py      # Original primary pipeline (multi-region GTEx)
 │
-└── MS2_Figures/                       # All manuscript figures (generated by pipeline)
-    ├── Figure1_EIF2S1_PELO_Convergence.{png,pdf}
-    ├── Figure2_GO_Enrichment.{png,pdf}
-    └── Figure3_MultiRegion_Replication.{png,pdf}
+├── all_21_pairwise_comparisons.csv        # Original pipeline output
+├── cross_region_replication.csv           # Original pipeline output
+├── cross_stage_coordination.csv           # Original pipeline output
+├── EIF2S1_custom_enrichment.csv           # Original pipeline output
+├── gProfiler_*.csv                        # GO enrichment results
+├── agonal_sensitivity.csv                 # Robustness analysis
+├── Figure*.pdf                            # Original figures
+│
+└── r3_revision_pipelines/                 # R3 REVISION ADDITIONS (2026-04-29)
+    │
+    ├── pipeline_1_tcf25_asc1.py           # Reviewer 2: TCF25/ASC-1 panel extension
+    ├── pipeline_2_disease_replication.py  # Reviewer 4: Parkinson's disease BA9 (GSE68719)
+    ├── pipeline_3_depmap.py               # Reviewer 2: DepMap CRISPR co-dependency
+    ├── pipeline_4_layer2h_pairing.py      # 21-pair Layer 2H landscape (Harbert in press)
+    ├── pipeline_5_formal_layer2h.py       # Formal continuous WJ + permutation null + bootstrap CI
+    │
+    ├── results/
+    │   ├── all_pairwise_comparisons_extended.csv  (Pipeline 1)
+    │   ├── new_gene_top_partners.csv               (Pipeline 1)
+    │   ├── disease_GSE68719_*.csv                  (Pipeline 2)
+    │   ├── disease_GSE138260_*.csv                 (Pipeline 2 — secondary cohort)
+    │   ├── depmap_*.csv                            (Pipeline 3)
+    │   ├── layer2h_dissociation_gaps.csv           (Pipeline 4)
+    │   ├── layer2h_cross_region_summary.csv        (Pipeline 4)
+    │   ├── layer2h_layer_separation_summary.csv    (Pipeline 4)
+    │   ├── layer2h_formal_continuous_wj.csv        (Pipeline 5)
+    │   ├── layer2h_type2_sign_treatment.csv        (Pipeline 5)
+    │   ├── layer2h_type6_pearson_vs_spearman.csv   (Pipeline 5)
+    │   ├── layer2h_permutation_null.csv            (Pipeline 5)
+    │   ├── layer2h_bootstrap_ci.csv                (Pipeline 5)
+    │   ├── layer2h_disease_comparison.csv          (Pipeline 5)
+    │   └── provenance_pipeline*.json               (Each pipeline's provenance)
+    │
+    └── figures/
+        └── layer2h_dissociation_gap_distribution.{png,pdf}  (Figure 2 of revised manuscript)
 ```
 
-## Pipeline Architecture
+## Reproduction
 
-The pipeline is organized as 18 sequential cells designed for Google Colab execution within a 12 GB RAM constraint. Each cell is self-documenting and produces verifiable intermediate outputs.
+### Original primary analysis (multi-region GTEx)
 
-| Cell | Function | Key Output |
-|------|----------|------------|
-| 1 | Environment setup | Package imports, output directories |
-| 2 | Configuration | 7-gene panel, 5 brain regions, 3 curated gene sets (locked) |
-| 3 | GTEx v8 download | TPM matrix, sample attributes, subject phenotypes |
-| 4 | Metadata loading | Region–sample mapping, agonal covariate extraction |
-| 5 | Memory-efficient TPM loading | Brain-only column extraction (~2 GB vs. full 56K-sample matrix) |
-| 6 | Region matrix preparation | Gene filtering (median TPM ≥ 1.0), log₂ transformation |
-| 7 | Genome-wide correlations | Vectorized Pearson *r* for all 7 targets × 16,211 genes |
-| 8 | Top 5% networks + 21 pairwise comparisons | Jaccard, Fisher's exact, Spearman ρ |
-| 9 | Custom gene set enrichment | Fisher's exact for RQC (11 genes), proteostasis (24), initiation (15) |
-| 10 | gProfiler GO/KEGG/Reactome enrichment | Full functional annotation via gprofiler-official |
-| 11 | Cross-stage translational coordination | Initiation × Rescue × Effector pairwise *r*, *t*-test, Cohen's *d* |
-| 12 | Agonal stress sensitivity | 5 partial correlation models (Hardy, ischemic, full) |
-| 13 | Multi-region replication | 5 brain regions, cross-region ρ matrices |
-| 14 | Gene set definitions for figures | Shared, unique, overlap categorization |
-| 15 | **Figure 1** — EIF2S1–PELO convergence | Venn diagram, scatter plot, Jaccard heatmap |
-| 16 | **Figure 2** — GO enrichment | 4-panel GO:BP barplots |
-| 17 | **Figure 3** — Multi-region replication | Cross-region ρ heatmaps |
-| 18 | Final summary | Complete manuscript number verification |
-
-## Analytical Methods
-
-**Data source:** GTEx v8 (dbGaP phs000424.v8.p2) — RNA-seq TPM across 5 brain regions (BA9 primary; n = 176–246 per region).
-
-**Co-expression analysis:** Genome-wide Pearson correlations on log₂(TPM + 1)-transformed data. Top 5% threshold defines co-expression networks per target gene.
-
-Reproducibility note: gProfiler updates its underlying Gene Ontology, KEGG, and Reactome databases periodically (typically quarterly). Enrichment p-values and term counts may differ slightly when re-running the pipeline against a newer database version. The pre-computed results in MS2_Results/ reflect the gProfiler database active at the time of manuscript submission. Users can verify the database version through the gProfiler API response metadata. Core enrichment patterns (e.g., RQC and proteostasis enrichment for EIF2S1, absence of translation initiation enrichment) are robust to database updates, as they reflect large fold-enrichments driven by gene membership rather than annotation boundary changes.
-
-**Seven-gene comparison panel:**
-
-| Gene | Role | Network Context |
-|------|------|-----------------|
-| **EIF2S1** | Translation initiation / ISR sensor | QC hub (this study) |
-| **PELO** | Ribosome rescue factor | QC hub (this study) |
-| **LTN1** | RQC E3 ubiquitin ligase | Nascent chain processing |
-| **NEMF** | CAT-tail modification | Nascent chain processing |
-| **TMEM97** | Sigma-2 receptor | Intracellular transport |
-| **HSPA5** | ER chaperone (BiP/GRP78) | ER stress/UPR |
-| **SIGMAR1** | Sigma-1 receptor | Mitochondrial translation |
-
-**Sensitivity analyses:**
-- Cell-type deconvolution (53 markers, 6 cell types)
-- Covariate adjustment (age, sex)
-- Agonal stress controls (Hardy Scale, ischemic time, full model)
-- Multi-region replication (5 brain regions)
-
-**Functional enrichment:**
-- gProfiler g:GOSt (GO:BP, GO:MF, GO:CC, KEGG, Reactome) with g:SCS correction
-- Custom Fisher's exact enrichment for 3 curated gene sets
-
-## Requirements
-
-The pipeline is designed to run in **Google Colab** (free tier, 12 GB RAM). No local installation is required beyond uploading the script.
-
-### Dependencies
-
-```
-numpy >= 1.24
-pandas >= 1.5
-scipy >= 1.11
-matplotlib >= 3.7
-matplotlib-venn
-gprofiler-official
-```
-
-Install in Colab with:
 ```bash
-!pip install gprofiler-official matplotlib-venn -q
+# Run in Google Colab (12GB RAM)
+python MS2_EIF2S1_Definitive_Pipeline.py
 ```
 
-### Data
+### R3 revision pipelines (local execution)
 
-The pipeline automatically downloads all required GTEx v8 files on first run:
+```bash
+cd r3_revision_pipelines/
 
-| File | Size | Source |
-|------|------|--------|
-| Gene TPM matrix | ~2.6 GB (gzipped) | GTEx Portal (Google Cloud) |
-| Sample attributes | ~15 MB | GTEx Portal |
-| Subject phenotypes | ~200 KB | GTEx Portal |
+# Pipeline 1: TCF25/ASC-1 panel extension
+python pipeline_1_tcf25_asc1.py
 
-## Quick Start
+# Pipeline 2: Parkinson's disease BA9 cohort
+python pipeline_2_disease_replication.py
 
-1. Open [Google Colab](https://colab.research.google.com/)
-2. Run !pip install gprofiler-official matplotlib-venn -q in your first Colab cell before executing the pipeline. The script includes this as a commented line (Cell 1) but it must be uncommented or run manually.
-3. Upload `MS2_EIF2S1_Definitive_Pipeline.py` or paste cells sequentially
-4. Run all cells in order (~20–30 min total)
-5. Results appear in `MS2_Results/` and `MS2_Figures/`
+# Pipeline 3: DepMap CRISPR co-dependency
+python pipeline_3_depmap.py
 
-The pipeline's final cell (Cell 18) prints a complete verification of every number reported in the manuscript.
+# Pipeline 4: 21-pair Layer 2H landscape
+python pipeline_4_layer2h_pairing.py
 
-## Curated Gene Sets
+# Pipeline 5: Formal continuous WJ + permutation null + bootstrap CI
+python pipeline_5_formal_layer2h.py
+```
 
-All gene sets are locked to the manuscript definitions (Cell 2) and include assertions to prevent silent drift.
+All pipelines use `RANDOM_SEED = 42` and `FORCE_RECOMPUTE = True` for full reproducibility.
 
-**Ribosome Quality Control (11 genes):** PELO, HBS1L, LTN1, NEMF, ANKZF1, VCP, UFD1, NPLOC4, ZNF598, RACK1, ABCE1
+## Methodology — Layer 2H Pairing-Family Decomposition
 
-**Proteostasis Network (24 genes):** 6 chaperones (HSPA5, HSP90B1, HSPA8, DNAJB1, DNAJC3, BAG3) + 6 UPS (STUB1, UBE2D1–3, UBE2G1, UBE2N) + 6 proteasome (PSMD1–3, PSMC1–3) + 6 autophagy (ATG5, ATG7, ATG12, BECN1, SQSTM1, NBR1)
+The R3 revision applies the principled-pairing criterion (Harbert, in press) to decompose EIF2S1-PELO architectural coupling into multiple complementary measurements:
 
-**Translation Initiation (15 genes):** EIF2S2, EIF2S3, EIF2B1–5, EIF3A–C, EIF4A1, EIF4E, EIF4G1, EIF5, EIF5B
+- **Type 1 (Continuous-Discrete):** Continuous Weighted Jaccard vs. binary Jaccard at top 5%. The dissociation gap localizes whether divergence concentrates in the broad value distribution or at the top-partner tail.
+- **Type 2 (Sign-Treatment):** Three formulations on the same coupling profiles — shifted (r+1)/2, unsigned |r|, and signed split. Gaps quantify sign contribution.
+- **Type 6 (Substrate-Projection):** Spearman vs. Pearson realizations. Near-zero gap indicates approximately linear-monotonic structure.
+- **Permutation null:** 200 random gene-pair gaps establish the random-null distribution.
+- **Bootstrap 95% CI:** 500 subject-resamples on the EIF2S1-PELO gap.
+- **Layer separation:** Transcriptional coupling (this work) vs. functional cellular co-dependency (DepMap).
 
-**Cross-Stage Classification (34 genes):** 15 initiation-stage + 8 rescue-stage + 11 effector-stage genes spanning the full translational surveillance cascade.
+## Citation (when manuscript is published)
 
-## Figures
+```
+Harbert, D.H. (year). EIF2S1-PELO Co-Expression Architecture in Human Brain:
+Pairing-Family Decomposition Reveals Constitutive Transcriptional Coupling,
+Disease-Selective Top-Partner Disruption, and Functional Layer Separation.
+[Journal]. DOI: 10.xxxx/...
+```
 
-| Figure | Description |
-|--------|-------------|
-| **Figure 1** | **(A)** Venn diagram of EIF2S1 ∩ PELO top 5% networks (559 shared). **(B)** Genome-wide rank scatter (ρ = 0.987). **(C)** 7 × 7 Jaccard similarity heatmap. |
-| **Figure 2** | GO:BP enrichment barplots for **(A)** EIF2S1 full network, **(B)** EIF2S1 ∩ PELO shared genes, **(C)** EIF2S1-unique genes, **(D)** PELO-unique genes. |
-| **Figure 3** | Cross-region Spearman ρ heatmaps for **(A)** EIF2S1 and **(B)** PELO across 5 brain regions. |
+## Methodological reference
 
-## Supplementary Tables
+Pairing-family decomposition framework introduced in:
 
-| Table | Contents |
-|-------|----------|
-| **S1** | Complete genome-wide correlation rankings for all 7 genes |
-| **S2** | Full GO enrichment results for all gene sets |
-| **S3** | STRING protein–protein interaction network for 559 shared genes |
-| **S4** | Cross-stage pairwise correlation matrix (34 genes) |
+```
+Harbert, D.H. (in press). Sigma-1 and Sigma-2 receptors exhibit divergent
+genome-wide co-expression architectures in human brain despite shared
+subcellular localization. Frontiers in Pharmacology, Neuropharmacology section.
+```
 
-## Citation
+## Data Sources
 
-If you use this pipeline or data in your work, please cite:
-
-> Harbert, D.H. (2025). EIF2S1 Co-expression Network Reveals a Closed-Loop Translational Quality Control Hub Linking Initiation Surveillance to Ribosome Rescue Machinery in Human Brain. *Frontiers in Molecular Neuroscience* (under review). Inner Architecture LLC, Canton, OH, USA.
-
-## Related Work
-
-This study is part of a multi-manuscript series characterizing co-expression network architecture of translational quality control and sigma receptor systems in the human brain:
-
-- **MS1** — [Two-Module Architecture of Ribosome-Associated Quality Control](https://github.com/innerarchitecturellc/rqc-two-module) (PELO/LTN1/NEMF divergence; *BMC Genomics*, under review)
-- **MS2** — This repository (EIF2S1–PELO closed-loop hub; *Frontiers in Molecular Neuroscience*, under review)
-- **MS3** — [Sigma-1 and Sigma-2 Receptor Divergent Co-Expression Networks](https://github.com/innerarchitecturellc/sigma-receptor-divergence) (SIGMAR1/TMEM97 divergence; *IJMS*, under review)
+| Source | Use |
+|--------|-----|
+| GTEx v8 (gtexportal.org) | Multi-region brain RNA-seq (primary analysis) |
+| GSE68719 (NCBI GEO) | BA9 prefrontal cortex PD vs control RNA-seq |
+| DepMap 24Q2 (depmap.org) | CRISPR gene-effect data, 1,150 cancer cell lines |
 
 ## License
 
-This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
+MIT License — see [LICENSE](LICENSE).
 
 ## Acknowledgments
 
-The author acknowledges the Genotype-Tissue Expression (GTEx) Project, supported by the Common Fund of the Office of the Director of the National Institutes of Health and by NCI, NHGRI, NHLBI, NIDA, NIMH, and NINDS.
-
----
-
-**Inner Architecture LLC** · Canton, OH 44721 · [innerarchitecturellc.com](https://innerarchitecturellc.com)
+Thanks to GTEx, NCBI GEO, and DepMap for making the underlying data publicly available, and to the Frontiers in Pharmacology editor and reviewers for substantive feedback that materially strengthened this work.

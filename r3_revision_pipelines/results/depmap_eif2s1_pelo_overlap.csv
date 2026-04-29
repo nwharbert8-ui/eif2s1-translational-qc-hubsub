@@ -1,0 +1,2 @@
+comparison,jaccard_top5,shared,set1_size,set2_size,fisher_or,fisher_p,genome_rank_rho,direct_pearson_r
+DepMap EIF2S1 vs PELO co-dependency,0.006218,11,890,890,0.228046,0.9999999998827257,-0.142439,-0.07137321595088401

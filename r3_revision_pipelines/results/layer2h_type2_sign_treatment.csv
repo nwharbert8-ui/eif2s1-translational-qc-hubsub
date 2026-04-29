@@ -1,0 +1,2 @@
+pair,gap_shifted_minus_unsigned,gap_shifted_minus_signed,gap_unsigned_minus_signed,max_abs_gap,interpretation
+EIF2S1-PELO,0.12914434507827455,0.13833176268192204,0.009187417603647496,0.13833176268192204,Sign treatment matters

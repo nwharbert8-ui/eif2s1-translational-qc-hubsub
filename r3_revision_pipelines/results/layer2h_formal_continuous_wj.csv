@@ -1,0 +1,2 @@
+cohort,wj_shifted,wj_unsigned,wj_signed,binary_jaccard_top5,gap_shifted_minus_binary,gap_unsigned_minus_binary,gap_signed_minus_binary,n_samples,n_genes
+control,0.9142449598181125,0.7851006147398379,0.7759131971361904,0.48977695167286245,0.42446800814525004,0.2953236630669755,0.286136245463328,44,16010

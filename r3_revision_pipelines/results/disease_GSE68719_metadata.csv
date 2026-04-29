@@ -1,0 +1,74 @@
+GSM,title,tissue,gender,post-mortem interval (pmi),rna integrity number (rin),age at death,proteomics study,proteomics sv1,proteomics sv2,proteomics sv3,microarray study,sample_label,group
+GSM1679648,C_0002 [reanalysis of GSM1580869],brain (BA9 prefrontal cortex),male,2,7.7,73,yes,-0.1521250874,-0.22833302,0.140254512,C_2,C_0002,Control
+GSM1679649,C_0003 [reanalysis of GSM1580870],brain (BA9 prefrontal cortex),male,2,7.9,91,yes,0.2017295736,0.33964929,-0.123660469,C_3,C_0003,Control
+GSM1679650,C_0004 [reanalysis of GSM1580871],brain (BA9 prefrontal cortex),male,2,8.6,82,yes,-0.179932978,-0.05581871,0.02516101,C_4,C_0004,Control
+GSM1679651,C_0005 [reanalysis of GSM1580872],brain (BA9 prefrontal cortex),male,2,9.1,97,yes,-0.0810941864,0.04989364,-0.144139565,C_5,C_0005,Control
+GSM1679652,C_0006 [reanalysis of GSM1580873],brain (BA9 prefrontal cortex),male,5,8.6,86,yes,-0.2332986784,0.01477846,-0.146838512,C_6,C_0006,Control
+GSM1679653,C_0008 [reanalysis of GSM1580874],brain (BA9 prefrontal cortex),male,2,8.7,91,yes,-0.1720527319,0.23816532,0.088149128,C_8,C_0008,Control
+GSM1679654,C_0009 [reanalysis of GSM1580875],brain (BA9 prefrontal cortex),male,3,6,81,yes,-0.1042201799,-0.20161225,0.091471726,C_9,C_0009,Control
+GSM1679655,C_0010 [reanalysis of GSM1580876],brain (BA9 prefrontal cortex),male,2,8.4,79,yes,0.0367334727,0.0987465,-0.024181824,C_10,C_0010,Control
+GSM1679656,C_0011 [reanalysis of GSM1580877],brain (BA9 prefrontal cortex),male,2,6.5,63,yes,-0.1075264306,-0.20727455,0.132719457,C_11,C_0011,Control
+GSM1679657,C_0012 [reanalysis of GSM1580878],brain (BA9 prefrontal cortex),male,19,7.1,66,no,C_12,,,,C_0012,Control
+GSM1679658,C_0013 [reanalysis of GSM1580879],brain (BA9 prefrontal cortex),male,15,7.8,69,no,C_13,,,,C_0013,Control
+GSM1679659,C_0014 [reanalysis of GSM1580880],brain (BA9 prefrontal cortex),male,21,8,79,no,C_14,,,,C_0014,Control
+GSM1679660,C_0015 [reanalysis of GSM1580881],brain (BA9 prefrontal cortex),male,10,8.2,61,no,C_15 - failed QC,,,,C_0015,Control
+GSM1679661,C_0016 [reanalysis of GSM1580882],brain (BA9 prefrontal cortex),male,20,8.4,58,no,C_16,,,,C_0016,Control
+GSM1679662,C_0017 [reanalysis of GSM1580883],brain (BA9 prefrontal cortex),male,21,8.2,70,no,C_17,,,,C_0017,Control
+GSM1679663,C_0018 [reanalysis of GSM1580884],brain (BA9 prefrontal cortex),male,17,8.5,66,no,C_18,,,,C_0018,Control
+GSM1679664,C_0019 [reanalysis of GSM1580885],brain (BA9 prefrontal cortex),male,19,7.5,73,no,C_19,,,,C_0019,Control
+GSM1679665,C_0020 [reanalysis of GSM1580886],brain (BA9 prefrontal cortex),male,24,7.9,60,no,C_20,,,,C_0020,Control
+GSM1679666,C_0021 [reanalysis of GSM1580887],brain (BA9 prefrontal cortex),male,26,7.3,76,no,C_21,,,,C_0021,Control
+GSM1679667,C_0022 [reanalysis of GSM1580888],brain (BA9 prefrontal cortex),male,17,7.8,61,yes,-0.0858234561,-0.23303236,0.449726801,C_22,C_0022,Control
+GSM1679668,C_0023 [reanalysis of GSM1580889],brain (BA9 prefrontal cortex),male,18,6.6,62,yes,-0.0374902854,-0.34126554,-0.330226377,C_23,C_0023,Control
+GSM1679669,C_0024 [reanalysis of GSM1580890],brain (BA9 prefrontal cortex),male,26,8.7,69,no,C_24,,,,C_0024,Control
+GSM1679670,C_0025 [reanalysis of GSM1580891],brain (BA9 prefrontal cortex),male,25,8.1,61,no,C_25,,,,C_0025,Control
+GSM1679671,C_0026 [reanalysis of GSM1580892],brain (BA9 prefrontal cortex),male,11,7.1,88,yes,0.2241993333,-0.0314914,0.157037925,C_26,C_0026,Control
+GSM1679672,C_0029 [reanalysis of GSM1580893],brain (BA9 prefrontal cortex),male,13,6.4,93,no,C_29,,,,C_0029,Control
+GSM1679673,C_0031 [reanalysis of GSM1580894],brain (BA9 prefrontal cortex),male,24,7.3,53,no,no,,,,C_0031,Control
+GSM1679674,C_0032 [reanalysis of GSM1580895],brain (BA9 prefrontal cortex),male,24,8.3,57,no,no,,,,C_0032,Control
+GSM1679675,C_0035 [reanalysis of GSM1580897],brain (BA9 prefrontal cortex),male,21,7.6,46,no,no,,,,C_0035,Control
+GSM1679676,C_0038 [reanalysis of GSM1580900],brain (BA9 prefrontal cortex),male,20,7.7,57,no,no,,,,C_0038,Control
+GSM1679677,C_0039 [reanalysis of GSM1580901],brain (BA9 prefrontal cortex),male,15,7.3,80,no,no,,,,C_0039,Control
+GSM1679678,C_0050 [reanalysis of GSM1580902],brain (BA9 prefrontal cortex),male,2,8.5,74,no,no,,,,C_0050,Control
+GSM1679679,C_0053 [reanalysis of GSM1580903],brain (BA9 prefrontal cortex),male,2,8.4,69,no,no,,,,C_0053,Control
+GSM1679680,C_0060 [reanalysis of GSM1580904],brain (BA9 prefrontal cortex),male,2,7.5,76,no,no,,,,C_0060,Control
+GSM1679681,C_0061 [reanalysis of GSM1580905],brain (BA9 prefrontal cortex),male,3,7.6,78,no,no,,,,C_0061,Control
+GSM1679682,C_0062 [reanalysis of GSM1580906],brain (BA9 prefrontal cortex),male,2,8.7,87,no,no,,,,C_0062,Control
+GSM1679683,C_0065 [reanalysis of GSM1580907],brain (BA9 prefrontal cortex),male,2,8.7,86,no,no,,,,C_0065,Control
+GSM1679684,C_0069 [reanalysis of GSM1580908],brain (BA9 prefrontal cortex),male,24,8.3,54,no,no,,,,C_0069,Control
+GSM1679685,C_0070 [reanalysis of GSM1580909],brain (BA9 prefrontal cortex),male,19,6.3,68,no,no,,,,C_0070,Control
+GSM1679686,C_0075 [reanalysis of GSM1580911],brain (BA9 prefrontal cortex),male,23,7.4,52,no,no,,,,C_0075,Control
+GSM1679687,C_0076 [reanalysis of GSM1580912],brain (BA9 prefrontal cortex),male,30,8.2,46,no,no,,,,C_0076,Control
+GSM1679688,C_0081 [reanalysis of GSM1580914],brain (BA9 prefrontal cortex),male,26,7.6,55,no,no,,,,C_0081,Control
+GSM1679689,C_0082 [reanalysis of GSM1580915],brain (BA9 prefrontal cortex),male,18,7.8,57,no,no,,,,C_0082,Control
+GSM1679690,C_0083 [reanalysis of GSM1580916],brain (BA9 prefrontal cortex),male,32,8.4,66,no,no,,,,C_0083,Control
+GSM1679691,C_0087 [reanalysis of GSM1580917],brain (BA9 prefrontal cortex),male,19,8.7,64,no,no,,,,C_0087,Control
+GSM1679692,P_0003,brain (BA9 prefrontal cortex),male,3,7.2,74,yes,0.1794718913,-0.01795492,-0.003261143,P_3,P_0003,PD
+GSM1679693,P_0006,brain (BA9 prefrontal cortex),male,2,7.1,83,no,P_6,,,,P_0006,PD
+GSM1679694,P_0012,brain (BA9 prefrontal cortex),male,2,8.5,80,no,P_12,,,,P_0012,PD
+GSM1679695,P_0013,brain (BA9 prefrontal cortex),male,2,7.3,83,yes,0.1997290752,0.07621332,-0.121627451,P_13,P_0013,PD
+GSM1679696,P_0014,brain (BA9 prefrontal cortex),male,2,8.4,80,yes,-0.2488724746,-0.11375596,0.083133542,P_14,P_0014,PD
+GSM1679697,P_0015,brain (BA9 prefrontal cortex),male,2,6.7,84,yes,0.5385649288,-0.32454975,0.155508239,P_15,P_0015,PD
+GSM1679698,P_0016,brain (BA9 prefrontal cortex),male,2,8.1,88,yes,0.0009549706,-0.1201296,0.062213318,P_16,P_0016,PD
+GSM1679699,P_0018,brain (BA9 prefrontal cortex),male,2,5.8,81,yes,-0.0530743027,0.14184193,-0.014892608,P_18,P_0018,PD
+GSM1679700,P_0019,brain (BA9 prefrontal cortex),male,4,6.1,77,yes,-0.1575656169,0.05498849,-0.255100208,P_19,P_0019,PD
+GSM1679701,P_0020,brain (BA9 prefrontal cortex),male,4,8.1,64,yes,0.4647410657,0.01639114,-0.13594178,P_20,P_0020,PD
+GSM1679702,P_0021,brain (BA9 prefrontal cortex),male,3,6.1,85,yes,-0.132162311,0.23876067,0.191032629,P_21,P_0021,PD
+GSM1679703,P_0022,brain (BA9 prefrontal cortex),male,9,6.4,94,no,P_22,,,,P_0022,PD
+GSM1679704,P_0023,brain (BA9 prefrontal cortex),male,27,6.5,80,no,P_23 - failed QC,,,,P_0023,PD
+GSM1679705,P_0026,brain (BA9 prefrontal cortex),male,16,6.9,85,no,P_26,,,,P_0026,PD
+GSM1679706,P_0027,brain (BA9 prefrontal cortex),male,7,8,75,yes,-0.1683601219,-0.1233597,-0.482172644,P_27,P_0027,PD
+GSM1679707,P_0028,brain (BA9 prefrontal cortex),male,15,7.1,74,no,P_28,,,,P_0028,PD
+GSM1679708,P_0029,brain (BA9 prefrontal cortex),male,31,6.1,89,no,P_29,,,,P_0029,PD
+GSM1679709,P_0030,brain (BA9 prefrontal cortex),male,11,7.7,66,yes,-0.0515914497,0.41220447,0.355889962,P_30,P_0030,PD
+GSM1679710,P_0031,brain (BA9 prefrontal cortex),male,8,6.8,65,yes,0.1190659798,0.31694453,-0.150255667,P_31,P_0031,PD
+GSM1679711,P_0033,brain (BA9 prefrontal cortex),male,19,6.1,85,no,P_33,,,,P_0033,PD
+GSM1679712,P_0034,brain (BA9 prefrontal cortex),male,4,7.8,64,no,no,,,,P_0034,PD
+GSM1679713,P_0063,brain (BA9 prefrontal cortex),male,1,6.1,64,no,no,,,,P_0063,PD
+GSM1679714,P_0126,brain (BA9 prefrontal cortex),male,30,6.9,75,no,no,,,,P_0126,PD
+GSM1679715,P_0130,brain (BA9 prefrontal cortex),male,18,7.3,68,no,no,,,,P_0130,PD
+GSM1679716,P_0132,brain (BA9 prefrontal cortex),male,16,7,95,no,no,,,,P_0132,PD
+GSM1679717,P_0133,brain (BA9 prefrontal cortex),male,23,7.5,74,no,no,,,,P_0133,PD
+GSM1679718,P_0134,brain (BA9 prefrontal cortex),male,23,7.9,68,no,no,,,,P_0134,PD
+GSM1679719,P_0135,brain (BA9 prefrontal cortex),male,12,6.9,79,no,no,,,,P_0135,PD
+GSM1679720,P_0136,brain (BA9 prefrontal cortex),male,25,6.7,70,no,no,,,,P_0136,PD

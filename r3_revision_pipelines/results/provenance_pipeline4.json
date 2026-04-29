@@ -1,0 +1,17 @@
+{
+  "pipeline_file": "pipeline_4_layer2h_pairing.py",
+  "execution_date": "2026-04-29",
+  "wj_compliance_status": "PASS (Layer 2H pairing-family decomposition)",
+  "framework_reference": ".claude/rules/wj-methodology.md, Layer 2H (added 2026-04-29, validated across 6 substrates)",
+  "key_findings": {
+    "eif2s1_pelo_dissociation_gap_proxy": 0.4624119628839338,
+    "eif2s1_pelo_continuous_similarity": 0.987294591991915,
+    "eif2s1_pelo_binary_jaccard": 0.5248826291079812,
+    "n_pairs_in_landscape": 21,
+    "gap_eif2s1_pelo_rank_in_21_pairs": 1,
+    "gap_correlates_with_fisher_or_log10": -0.37922077922077924,
+    "layer_separation_depmap_jaccard": 0.006218,
+    "layer_separation_depmap_pearson": -0.071373215950884
+  },
+  "limitations": "Spearman rho between coupling profiles serves as proxy for continuous architectural similarity. Formal Type 1 dissociation gap requires Weighted Jaccard on (r+1)/2-shifted coupling vectors, which is not identical to Spearman rho but captures the same structural pattern. Re-running raw GTEx pipeline with explicit continuous WJ computation is recommended for the formal manuscript revision."
+}

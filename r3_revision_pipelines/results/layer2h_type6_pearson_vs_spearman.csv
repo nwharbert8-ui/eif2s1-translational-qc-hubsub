@@ -1,0 +1,2 @@
+pair,spearman_wj_shifted,pearson_wj_shifted,gap_continuous,spearman_bj_top5,pearson_bj_top5,gap_binary,interpretation
+EIF2S1-PELO,0.9142449598181125,0.9098390649750628,0.004405894843049651,0.48977695167286245,0.5403846153846154,-0.050607663711752904,Linear-monotonic structure
